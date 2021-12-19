@@ -1,0 +1,4 @@
+Скачать проект: git clone https://github.com/yasha1208/ghghgh.git
+Добавить файлы: git add .
+Создать коммит: git commit -m "комментарий"
+Отправить в гитхаб: git push
