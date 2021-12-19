@@ -1,0 +1,37 @@
+﻿@page "/Redactor"
+@using Microsoft.EntityFrameworkCore
+@using System.ComponentModel.DataAnnotations
+
+@inject AppDbContext Db;
+<h3>Redactor</h3>
+
+<EditForm Model="_model" OnValidSubmit="ProcessValidForm">
+  <DataAnnotationsValidator/>
+ 
+  Email: <InputText @bind-Value="_model.Name" />
+  Пароль: <InputText @bind-Value="_model.Price" />
+  @* Красивее оборачивать в table *@
+ 
+  <br/> <input type="submit" value="Войти">
+  <ValidationSummary/>
+
+</EditForm>
+
+
+@code {
+  private Product _model = new();
+  private class LoginFormModel
+  {
+    [Required]
+    public string Name { get; set; }
+    
+    [Required, MinLength(6)]
+    public string Price { get; set; }
+  }
+
+  private void ProcessValidForm()
+  {
+  //логика обработки формы
+  }
+
+}
